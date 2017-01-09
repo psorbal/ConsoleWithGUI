@@ -5,37 +5,20 @@ Screenshot from GUI:
 ![Screenshot](https://github.com/szemyxz/ConsoleWithGUI/blob/master/gui.png)
 
 ## All available commands in console
-### prompt
-User can customize the presented prompt using a ***prompt*** command with a parameter.
-Possible values of the parameter:
-* ***$cwd*** will result in displaying a path to current working directory in the prompt
-* ***reset*** will reset the prompt to default ($ sign)
-* Any other string will display the parameter in the prompt.
-
-**Example:**
-```sh
-[MyShell] $>prompt nice
-[MyShell] nice>prompt reset
-[MyShell] $>prompt $cwd
-[MyShell] /home/user/project/console/target>prompt end
-[MyShell] end>prompt reset
-[MyShell] $>
-```
-
 ### dir
 User can display the content of current working directory using a ***dir*** command.
 Format of the display: type of the item (DIR|FILE) and name of the item.
 
 **Example:**
 ```sh
-[MyShell] $>dir
+>dir
 Content of /home/user/project/console/target
 DIR classes
 DIR generated-sources
 DIR maven-archiver
 FILE shell-1.0.jar
 DIR surefire
-[MyShell] $>
+>
 ```
 
 ### cd
@@ -45,13 +28,12 @@ User can change the current working directory using a ***cd*** command with a pa
 
 **Example:**
 ```sh
-[MyShell] $>prompt $cwd
-[MyShell] /home/user/project/console/target>cd classes
-[MyShell] /home/user/project/console/target/classes>cd pl
+/home/user/project/console/target>cd classes
+/home/user/project/console/target/classes>cd pl
 This subdirectory does not exist
-[MyShell] /home/user/project/console/target/classes>cd ..
-[MyShell] /home/user/project/console/target>cd ..
-[MyShell] /home/user/project/console>
+/home/user/project/console/target/classes>cd ..
+/home/user/project/console/target>cd ..
+/home/user/project/console>
 ```
 
 ### tree
@@ -60,7 +42,7 @@ and its subdirectories using a ***tree*** command.
 
 **Example:**
  ```sh
- [MyShell] $>tree
+>tree
  target
  -classes
  --com
@@ -70,29 +52,29 @@ and its subdirectories using a ***tree*** command.
  --annotations
  -maven-archiver
  -surefire
- [MyShell] $>
+>
  ```
 ### ctdir
 User can create a new directory in current working directory using a ***ctdir*** command.
 
 **Example:**
  ```sh
- [MyShell] $>ctdir newDirectory
+>ctdir newDirectory
  Directory newDirectory is created!
- [MyShell] $>ctdir newDirectory
+>ctdir newDirectory
  newDirectory directory exist in this current working directory
- [MyShell] $>
+>
  ```
 ### ctfile
 User can create a new file in current working directory using a ***ctfile*** command.
 
 **Example:**
  ```sh
- [MyShell] $>ctfile newfile
+>ctfile newfile
  newfile is created!
- [MyShell] $>ctfile newfile
+>ctfile newfile
  newfile already exists
- [MyShell] $>
+>
  ```
 
 ### delete
@@ -105,21 +87,21 @@ Possible values of the parameter:
 
 **Example:**
 ```sh
-[MyShell] $>delete nice
+>delete nice
 nice is deleted
-[MyShell] $>delete ok*
+>delete ok*
 okay is deleted
 oki is deleted
 okk id deleted
-[MyShell] $>delete .txt
+>delete .txt
 yes.txt is deleted
 nope.txt is deleted
-[MyShell] end>delete nonexists
+>delete nonexists
 Delete operation has failed
-[MyShell] $>delete all
+>delete all
 del.txt is deleted
 end is deleted
-[MyShell] $>
+>
 ```
 
 ### exit
@@ -127,7 +109,7 @@ User can terminate the application by using ***exit*** command.
 
 **Example:**
 ```sh
-[MyShell] $>exit
+>exit
 Bye.
 ```
 
@@ -136,9 +118,9 @@ Any other command shall result in displaying
 
 **Example:**
 ```sh
-[MyShell] $>hello computer
+>hello computer
 hello computer : unknown command
-[MyShell] $>why nothing works
+>why nothing works
 why nothing works : unknown command
 ```
 
