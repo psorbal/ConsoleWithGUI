@@ -3,5 +3,4 @@
 *.ipr
 *.iws
 .idea/
-
-*.class
+target/
