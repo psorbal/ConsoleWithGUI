@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.console.controller.Controller">
-  <TextArea fx:id="txt_area" blendMode="SRC_OVER" disable="false" editable="false" layoutX="14.0" layoutY="14.0" prefHeight="257.0" prefWidth="772.0" text="" wrapText="true" />
-  <TextField fx:id="txt_field" blendMode="SRC_OVER" layoutX="14.0" layoutY="302.0" prefHeight="38.0" prefWidth="772.0" text="" />
-  <Label layoutX="14.0" layoutY="279.0" text="Enter command:" />
-  <Button fx:id="button_execute" layoutX="669.0" layoutY="348.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="117.0" text="Execute" />
-  <Button fx:id="button_clear" layoutX="548.0" layoutY="348.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="108.99990000000253" text="Clear field" />
-  <Button fx:id="button_console" layoutX="419.0" layoutY="348.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="117.0" text="Clear console" />
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="400.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1"
+            xmlns="http://javafx.com/javafx/2.2" fx:controller="com.console.controller.Controller">
+    <TextArea fx:id="textArea" blendMode="SRC_OVER" editable="false" layoutX="14.0" layoutY="14.0" prefHeight="257.0"
+            prefWidth="772.0" wrapText="true" />
+    <TextField fx:id="textField" blendMode="SRC_OVER" layoutX="14.0" layoutY="302.0" prefHeight="38.0"
+             prefWidth="772.0" />
+    <Label layoutX="14.0" layoutY="279.0" text="Enter command:" />
+    <Button fx:id="buttonExecute" layoutX="669.0" layoutY="348.0" mnemonicParsing="false" prefHeight="38.0"
+          prefWidth="117.0" text="Execute" />
+    <Button fx:id="buttonClear" layoutX="548.0" layoutY="348.0" mnemonicParsing="false" prefHeight="38.0"
+          prefWidth="108.99990000000253" text="Clear field" />
+    <Button fx:id="buttonConsole" layoutX="419.0" layoutY="348.0" mnemonicParsing="false" prefHeight="38.0"
+          prefWidth="117.0" text="Clear console" />
+
 </AnchorPane>
