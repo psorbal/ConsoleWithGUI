@@ -22,21 +22,19 @@ public class Delete implements Command, Observer {
         if (command.matches("delete (.+)")){
             this.nameOfFile = command.substring(7);
             return true;
+        } else {
+            return false;
         }
-        else return false;
     }
 
     public String executeCommand() {
-        if(nameOfFile.matches("all")){
+        if (nameOfFile.matches("all")){
             return deleteAllFiles();
-        }
-        else if(nameOfFile.matches("(.+)\\*")){
+        } else if(nameOfFile.matches("(.+)\\*")){
             return deleteFileWithRegex();
-        }
-        else if (nameOfFile.matches("\\..+")){
+        } else if (nameOfFile.matches("\\..+")){
             return deleteFilesWithExtension();
-        }
-        else {
+        } else {
             return deleteFileFullName();
         }
     }
@@ -66,8 +64,7 @@ public class Delete implements Command, Observer {
         File file = new File(path+"/"+nameOfFile);
         if (file.delete()){
             return nameOfFile + " is deleted\n";
-        }
-        else {
+        } else {
             return "Delete operation has failed\n";
         }
     }
@@ -84,8 +81,10 @@ public class Delete implements Command, Observer {
                     sb.append(" - delete operation has failed\n");
                 }
             }
+        } else {
+            sb.append("There is no files to delete");
         }
-        else sb.append("There is no files to delete");
+
         return sb;
     }
 }

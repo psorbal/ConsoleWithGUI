@@ -25,8 +25,9 @@ public class Ctfile implements Command, Observer {
         if (command.matches("ctfile (.+)")){
             this.nameOfNewFile = command.substring(7);
             return true;
+        } else {
+            return false;
         }
-        else return false;
     }
 
     public String executeCommand() {
@@ -35,12 +36,10 @@ public class Ctfile implements Command, Observer {
             File file = new File(path+"/"+nameOfNewFile);
             if(file.createNewFile()){
                 output = nameOfNewFile + " is created \n";
-            }
-            else {
+            } else {
                 output = nameOfNewFile + " already exists\n";
             }
-        }
-        catch (IOException e){
+        } catch (IOException e){
             e.printStackTrace();
         }
         return output;

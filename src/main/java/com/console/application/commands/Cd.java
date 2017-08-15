@@ -17,7 +17,7 @@ public class Cd implements Command, Observer {
     private String command;
     private String path;
 
-    public Cd(Parameter parameter){
+    public Cd(Parameter parameter) {
         this.parameter = parameter;
         parameter.addObserver(this);
         this.path = parameter.getPath();
@@ -27,31 +27,33 @@ public class Cd implements Command, Observer {
         if (command.matches("cd (.+)")){
             this.command = command;
             return true;
+        } else {
+            return false;
         }
-        else return false;
     }
 
     public String executeCommand() {
-        if(command.matches("cd \\.\\.")){
+        if (command.matches("cd \\.\\.")) {
             File directory = new File(path);
             if (directory.getParent() != null) {
                 setDir(directory.getParent());
                 return parameter.getPath() + "\n";
+            } else {
+                return "This path does not have parent directory";
             }
-            else return "This path does not have parent directory";
-        }
-        else {
+        } else {
             command = command.substring(3);
             File directory = new File(command).getAbsoluteFile();
-            if(directory.exists()){
+            if (directory.exists()) {
                 setDir(directory.getAbsolutePath());
                 return parameter.getPath() + "\n";
+            } else {
+                return "This directory does not exist in this scope";
             }
-            else return  "This directory does not exist in this scope";
         }
     }
 
-    private void setDir(String varDir){
+    private void setDir(String varDir) {
         parameter.setParameter(varDir);
         System.setProperty("user.dir", varDir);
         parameter.setPath(System.getProperty("user.dir"));

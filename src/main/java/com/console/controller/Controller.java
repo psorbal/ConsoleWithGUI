@@ -1,7 +1,6 @@
 package com.console.controller;
 
 import com.console.application.model.DataOutput;
-import javafx.beans.value.ChangeListener;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
@@ -25,12 +24,9 @@ public class Controller {
     @FXML
     TextField txt_field;
 
-    public Controller(){
-    }
-
     @FXML
-    void initialize(){
-        txt_area.textProperty().addListener((ChangeListener<Object>) (observable, oldValue, newValue) ->
+    void initialize() {
+        txt_area.textProperty().addListener((observable, oldValue, newValue) ->
                 txt_area.setScrollTop(Double.MAX_VALUE));
 
         txt_field.setOnKeyPressed((event) -> {
@@ -38,6 +34,7 @@ public class Controller {
                 executeDemand();
             }
         });
+
         button_execute.setOnAction((event) -> executeDemand());
         button_clear.setOnAction((event) -> txt_field.clear());
         button_console.setOnAction((event) -> txt_area.clear());

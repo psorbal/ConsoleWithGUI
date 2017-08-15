@@ -1,13 +1,12 @@
 package com.console.application.commands;
 
-/**
- * Class for command ctdir which allow to crate new folder
- */
-
 import com.console.application.parameter.Observer;
 import com.console.application.parameter.Parameter;
 import java.io.File;
 
+/**
+ * Class for command ctdir which allow to crate new folder
+ */
 public class Ctdir implements Command, Observer {
     private Parameter parameter;
     private String nameOfNewDirectory;
@@ -20,16 +19,17 @@ public class Ctdir implements Command, Observer {
     }
 
     public boolean matches(String command) {
-        if (command.matches("ctdir (.+)")){
+        if (command.matches("ctdir (.+)")) {
             this.nameOfNewDirectory = command.substring(6);
             return true;
+        } else {
+            return false;
         }
-        else return false;
     }
 
     public String executeCommand() {
         File file = new File(path+"/"+nameOfNewDirectory);
-        if(!file.exists()) {
+        if (!file.exists()) {
             if (file.mkdir()) {
                 return "Directory "+nameOfNewDirectory+ " is created!\n";
             } else {

@@ -32,7 +32,7 @@ public class DataOutput{
             }
         }
 
-        if(!matchFound){
+        if (!matchFound) {
             sb.append(userCommand);
             sb.append(": unknown command \n");
         }

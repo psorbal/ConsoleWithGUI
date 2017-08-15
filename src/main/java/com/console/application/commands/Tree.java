@@ -40,8 +40,9 @@ public class Tree implements Command, Observer {
         sb.append(getBranch(branch));
         sb.append(directory.getName());
         sb.append("\n");
+
         File [] files = directory.listFiles();
-        if(files != null) {
+        if (files != null) {
             for (File file : files) {
                 if (file.isDirectory() && !file.isHidden()) {
                     printDirectoryTree(file, branch + 1, sb);

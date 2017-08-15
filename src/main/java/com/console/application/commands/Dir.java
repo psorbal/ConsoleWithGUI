@@ -30,8 +30,9 @@ public class Dir implements Command, Observer {
 
     public String executeCommand() {
         StringBuilder sb = new StringBuilder();
-        try{
+        try {
             File [] files = new File(path).listFiles();
+
             if (files != null && files.length != 0) {
                 sb.append("Content of ");
                 sb.append(path);
@@ -47,10 +48,10 @@ public class Dir implements Command, Observer {
                         sb.append("\n");
                     }
                 }
+            } else {
+                return "This folder is empty \n";
             }
-            else return "This folder is empty \n";
-        }
-        catch(Exception e){
+        } catch(Exception e){
             e.printStackTrace();
         }
 
