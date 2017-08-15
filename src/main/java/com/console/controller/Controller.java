@@ -10,39 +10,39 @@ import javafx.scene.input.KeyCode;
 public class Controller {
 
     @FXML
-    Button button_execute;
+    Button buttonExecute;
 
     @FXML
-    Button button_clear;
+    Button buttonClear;
 
     @FXML
-    Button button_console;
+    Button buttonConsole;
 
     @FXML
-    TextArea txt_area;
+    TextArea textArea;
 
     @FXML
-    TextField txt_field;
+    TextField textField;
 
     @FXML
     void initialize() {
-        txt_area.textProperty().addListener((observable, oldValue, newValue) ->
-                txt_area.setScrollTop(Double.MAX_VALUE));
+        textArea.textProperty().addListener((observable, oldValue, newValue) ->
+                textArea.setScrollTop(Double.MAX_VALUE));
 
-        txt_field.setOnKeyPressed((event) -> {
+        textField.setOnKeyPressed(event -> {
             if(event.getCode() == KeyCode.ENTER) {
                 executeDemand();
             }
         });
 
-        button_execute.setOnAction((event) -> executeDemand());
-        button_clear.setOnAction((event) -> txt_field.clear());
-        button_console.setOnAction((event) -> txt_area.clear());
+        buttonExecute.setOnAction(event -> executeDemand());
+        buttonClear.setOnAction(event -> textField.clear());
+        buttonConsole.setOnAction(event -> textArea.clear());
     }
 
     private void executeDemand(){
         DataOutput dataOutput = new DataOutput();
-        String userCommand = txt_field.getText();
-        txt_area.appendText(dataOutput.exec(userCommand));
+        String userCommand = textField.getText();
+        textArea.appendText(dataOutput.exec(userCommand));
     }
 }
